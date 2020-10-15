@@ -1,0 +1,242 @@
+$grey-color: #525252;
+
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-container{
+    margin: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie-card{
+    flex: 0 1 calc(25% - 4em);
+    margin: 10px;
+    background-color: $grey-color;
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 5px 5px 10px $grey-color;
+    z-index: 0;
+    transition: ease-in 0.2s;
+
+        img {
+            width: 100%;
+        }
+
+        p:first-child{
+            position: absolute;
+            background-color: #000000;
+            border-radius: 50%; 
+            font-size: 20px;
+            height: 30px;
+            width: 30px;
+            top: -10px;
+            right: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid;
+        }
+
+        p{
+            padding: 5px;
+        }
+}
+
+.movie-card:hover{
+    transition: ease-in 0.2s;
+    opacity: 0.6;
+}
+
+.loadMoreMovies{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.loadMoreButton{
+    background-color: $grey-color;
+    font-size: 30px;
+    border-radius: 25px;
+    text-align: center;
+    border: none;
+    transition: ease-out 0.2s;
+}
+
+.loadMoreButton:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    transition: ease-in 0.2s;
+    color: #000000;
+    box-shadow: 8px 8px 10px #475bb4;
+}
+
+.movie-info{
+    margin: 7rem;
+    padding: 1.5rem;
+    background-color: #000000;
+    font-size: 20px;
+    .header{
+        margin-bottom: 1rem;
+    }
+}
+
+.btn{
+    float: right;
+    background-color: $grey-color;
+    font-size: 30px;
+    border-radius: 25px;
+    text-align: center;
+    border: none;
+    transition: ease-out 0.2s;
+}
+.btn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    transition: ease-in 0.2s;
+    color: #ffffff;
+    box-shadow: 8px 8px 10px #475bb4;
+}
+
+.overview{
+    margin-bottom: 0.5rem;
+    position: relative;
+    img{
+        width: 100%;
+        height: auto;
+        background-size: contain;
+    }
+    p{
+        padding: 1rem;
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #000000;
+        opacity: 0.8;
+        border-radius: 0 15px 0 0;
+    }
+}
+
+.movie-details{
+    p{
+        margin: 5px 0 5px 0;
+    }
+}
+
+.random{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.myModal{
+    margin: 3% 25% 5% 25%;
+    padding: 1rem;
+    background-color: $grey-color;
+    position: relative;
+    overflow: auto;
+    outline: none;
+    span{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    h1{
+        padding-bottom: .5rem;
+    }
+}
+
+.button-div{
+    padding: 1rem;
+    label{
+        cursor: pointer;
+    }
+}
+
+.buttons{
+    padding: .3rem;
+}
+
+.roll-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    button{
+        width: 20%;
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 30px;
+        border-radius: 15px;
+        text-align: center;
+        border: none;
+        transition: ease-out 0.2s;
+        outline: none;
+    }
+    button:hover{
+        cursor: pointer;
+        opacity: 0.5;
+        transition: ease-in 0.2s;
+        color: #000000;
+        box-shadow: 8px 8px 10px #475bb4;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .flex-container{
+        margin: 1rem;
+        font-size: 10px;
+    }
+    .movie-card p:first-child{
+        font-size: 10px;
+        height: 20px;
+        width: 20px;
+    }
+    .loadMoreButton{
+        font-size: 20px;
+    }
+    .myModal{
+        margin: 0.5rem;
+        padding: 0.5rem;
+        font-size: 15px;
+        padding-bottom: 0;
+    }
+    .roll-btn button{
+        font-size: 25px;
+    }
+    .movie-info{
+        margin:1rem;
+    }
+    .header button, h1{
+        font-size: 15px;
+    }
+
+    .overview{
+        p{
+            font-size: 10px;
+            width: 70%;
+        }
+    }
+    .movie-details{
+        p{
+            font-size: 15px;
+        }
+    }
+
+}
