@@ -5,9 +5,10 @@ import Overview from './components/movieInfo/Overview';
 import Details from './components/movieInfo/Details';
 
 const Movie = ({movieId}) => { 
-    const [movie,error] = useMovieFetch(movieId);
+    const [movie,error,loading] = useMovieFetch(movieId);
 
     if(error) return <div>Something went wrong...</div>;
+    if(loading) return <div>Just a second...</div>
 
     return(
         <div className="movie-info">
@@ -22,6 +23,7 @@ const Movie = ({movieId}) => {
                 popularity={movie.popularity}
                 language={movie.original_language}
                 proComp={movie.production_companies}
+                title={movie.title}
             />
         </div>
     )
